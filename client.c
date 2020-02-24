@@ -61,29 +61,9 @@ int main(int argc, char**argv) {
    printf("Error receiving data!\n");    
   } else {
    printf("Received: ");
-	int x = 0;
-   fputs(buffer, stdout);
-	sscanf(buffer,"%d", &x);
-	int j;
-    x = x + 1;
-	/*for(j = 0; j <= 100; j++)
-		x = x + j;*/
-
-	printf("\nO numero: %d", x);
-   printf("\n");
-	sprintf(buffer, "%d", x);
-	printf("Ficou isso aí: ");
-	fputs(buffer, stdout);
-
-    ret = sendto(sockfd, buffer, BUF_SIZE, 0, (struct sockaddr *) &addr, sizeof(addr));  
 	
-
+    fputs(buffer, stdout);
   }
-
-	
-
-
-  
  }
  
  return 0;    

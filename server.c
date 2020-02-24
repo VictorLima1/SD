@@ -61,6 +61,23 @@ void main() {
     }
     printf("Received data from %s: %s\n", clientAddr, buffer); 
 
+    int x = 0;
+    sscanf(buffer,"%d", &x);
+	int j;
+    x = x + 1;
+    
+    int j = 1;
+    while(j == 1 && j < 100){
+        x = x + 1;
+        j++;
+    }
+
+    printf("\nO numero: %d", x);
+    printf("\n");
+	sprintf(buffer, "%d", x);
+	/*printf("Ficou isso aí: ");
+    fputs(buffer, stdout);*/
+
     ret = sendto(newsockfd, buffer, BUF_SIZE, 0, (struct sockaddr *) &cl_addr, len);   
     if (ret < 0) {  
      printf("Error sending data!\n");  
